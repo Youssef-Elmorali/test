@@ -131,11 +131,15 @@ export default function Header() {
         {/* Mobile menu with animation */}
         <div
           className={`fixed inset-0 bg-white dark:bg-gray-900 z-10 md:hidden transition-all duration-300 ease-in-out transform ${
-            mobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
+            mobileMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-full pointer-events-none"
           }`}
+          style={{
+            backgroundAttachment: "initial",
+            overflowY: "auto",
+          }}
           aria-hidden={!mobileMenuOpen}
         >
-          <div className="flex flex-col items-center justify-center h-full space-y-8">
+          <div className="flex flex-col items-center justify-center min-h-screen py-20 space-y-8">
             <Link
               href="/"
               className={`text-xl font-medium ${isActive("/") ? "text-primary" : "dark:text-white"} transform transition-transform duration-300 hover:scale-110`}
