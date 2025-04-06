@@ -130,12 +130,12 @@ export default function Header() {
 
         {/* Mobile menu with animation */}
         <div
-          className={`fixed inset-0 bg-white dark:bg-gray-900 z-10 md:hidden transition-all duration-300 ease-in-out transform ${
+          className={`fixed inset-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md z-[100] md:hidden transition-all duration-300 ease-in-out transform ${
             mobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
           }`}
           aria-hidden={!mobileMenuOpen}
         >
-          <div className="flex flex-col items-center justify-center h-full space-y-8">
+          <div className="flex flex-col items-center justify-center h-full pt-24 space-y-8">
             <Link
               href="/"
               className={`text-xl font-medium ${isActive("/") ? "text-primary" : "dark:text-white"} transform transition-transform duration-300 hover:scale-110`}
