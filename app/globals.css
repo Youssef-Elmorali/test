@@ -13,7 +13,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
 
-    --primary: 343 65% 42%; /* Keeping your custom #B32346 color */
+    --primary: 343 65% 42%; /* Changed to match #B32346 */
     --primary-foreground: 0 0% 98%;
 
     --secondary: 0 0% 96.1%;
@@ -45,9 +45,8 @@
     --popover: 0 0% 3.9%;
     --popover-foreground: 0 0% 98%;
 
-    /* Keep primary color consistent in dark mode too */
-    --primary: 343 65% 42%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
 
     --secondary: 0 0% 14.9%;
     --secondary-foreground: 0 0% 98%;
@@ -75,3 +74,4 @@
     @apply bg-background text-foreground;
   }
 }
+

@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Menu, X } from 'lucide-react'
+import { Menu, X } from "lucide-react"
 import ThemeToggle from "./theme-toggle"
 
 export default function Header() {
@@ -51,8 +51,8 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ease-in-out ${
         scrolled
-          ? "bg-background/95 backdrop-blur-sm shadow-md py-2"
-          : "bg-background/80 backdrop-blur-sm py-4"
+          ? "bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm shadow-md py-2"
+          : "bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm py-4"
       }`}
     >
       <div className="container mx-auto flex items-center justify-between px-4 md:px-6 relative">
@@ -70,8 +70,8 @@ export default function Header() {
         <nav className="hidden md:flex items-center gap-8">
           <Link
             href="/"
-            className={`text-sm font-medium transition-all duration-200 hover:text-primary ${
-              isActive("/") ? "border-b-2 border-primary" : ""
+            className={`text-sm font-medium transition-all duration-200 hover:text-primary dark:text-gray-200 dark:hover:text-white ${
+              isActive("/") ? "border-b-2 border-black dark:border-white" : ""
             }`}
             aria-current={isActive("/") ? "page" : undefined}
           >
@@ -79,8 +79,8 @@ export default function Header() {
           </Link>
           <Link
             href="/donate"
-            className={`text-sm font-medium transition-all duration-200 hover:text-primary ${
-              isActive("/donate") ? "border-b-2 border-primary" : ""
+            className={`text-sm font-medium transition-all duration-200 hover:text-primary dark:text-gray-200 dark:hover:text-white ${
+              isActive("/donate") ? "border-b-2 border-black dark:border-white" : ""
             }`}
             aria-current={isActive("/donate") ? "page" : undefined}
           >
@@ -88,8 +88,8 @@ export default function Header() {
           </Link>
           <Link
             href="/find-blood"
-            className={`text-sm font-medium transition-all duration-200 hover:text-primary ${
-              isActive("/find-blood") ? "border-b-2 border-primary" : ""
+            className={`text-sm font-medium transition-all duration-200 hover:text-primary dark:text-gray-200 dark:hover:text-white ${
+              isActive("/find-blood") ? "border-b-2 border-black dark:border-white" : ""
             }`}
             aria-current={isActive("/find-blood") ? "page" : undefined}
           >
@@ -97,8 +97,8 @@ export default function Header() {
           </Link>
           <Link
             href="/register"
-            className={`text-sm font-medium transition-all duration-200 hover:text-primary ${
-              isActive("/register") ? "border-b-2 border-primary" : ""
+            className={`text-sm font-medium transition-all duration-200 hover:text-primary dark:text-gray-200 dark:hover:text-white ${
+              isActive("/register") ? "border-b-2 border-black dark:border-white" : ""
             }`}
             aria-current={isActive("/register") ? "page" : undefined}
           >
@@ -111,8 +111,8 @@ export default function Header() {
 
           <Link
             href="/login"
-            className={`hidden md:block border border-primary rounded px-6 py-2 text-sm font-medium transition-all duration-200 hover:bg-primary hover:text-white ${
-              isActive("/login") ? "bg-primary text-white" : ""
+            className={`hidden md:block border border-black dark:border-white rounded px-6 py-2 text-sm font-medium transition-all duration-200 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black ${
+              isActive("/login") ? "bg-primary text-white" : "dark:text-white"
             }`}
           >
             Log In
@@ -130,15 +130,15 @@ export default function Header() {
 
         {/* Mobile menu with animation */}
         <div
-          className={`fixed inset-0 top-0 bg-background z-10 md:hidden transition-all duration-300 ease-in-out transform ${
+          className={`fixed inset-0 bg-white dark:bg-gray-900 z-10 md:hidden transition-all duration-300 ease-in-out transform ${
             mobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
           }`}
           aria-hidden={!mobileMenuOpen}
         >
-          <div className="flex flex-col items-center justify-center h-full space-y-8 pt-16">
+          <div className="flex flex-col items-center justify-center h-full space-y-8">
             <Link
               href="/"
-              className={`text-xl font-medium ${isActive("/") ? "text-primary" : ""} transform transition-transform duration-300 hover:scale-110`}
+              className={`text-xl font-medium ${isActive("/") ? "text-primary" : "dark:text-white"} transform transition-transform duration-300 hover:scale-110`}
               onClick={() => setMobileMenuOpen(false)}
               aria-current={isActive("/") ? "page" : undefined}
             >
@@ -146,7 +146,7 @@ export default function Header() {
             </Link>
             <Link
               href="/donate"
-              className={`text-xl font-medium ${isActive("/donate") ? "text-primary" : ""} transform transition-transform duration-300 hover:scale-110`}
+              className={`text-xl font-medium ${isActive("/donate") ? "text-primary" : "dark:text-white"} transform transition-transform duration-300 hover:scale-110`}
               onClick={() => setMobileMenuOpen(false)}
               aria-current={isActive("/donate") ? "page" : undefined}
             >
@@ -154,7 +154,7 @@ export default function Header() {
             </Link>
             <Link
               href="/find-blood"
-              className={`text-xl font-medium ${isActive("/find-blood") ? "text-primary" : ""} transform transition-transform duration-300 hover:scale-110`}
+              className={`text-xl font-medium ${isActive("/find-blood") ? "text-primary" : "dark:text-white"} transform transition-transform duration-300 hover:scale-110`}
               onClick={() => setMobileMenuOpen(false)}
               aria-current={isActive("/find-blood") ? "page" : undefined}
             >
@@ -162,7 +162,7 @@ export default function Header() {
             </Link>
             <Link
               href="/register"
-              className={`text-xl font-medium ${isActive("/register") ? "text-primary" : ""} transform transition-transform duration-300 hover:scale-110`}
+              className={`text-xl font-medium ${isActive("/register") ? "text-primary" : "dark:text-white"} transform transition-transform duration-300 hover:scale-110`}
               onClick={() => setMobileMenuOpen(false)}
               aria-current={isActive("/register") ? "page" : undefined}
             >
@@ -181,3 +181,4 @@ export default function Header() {
     </header>
   )
 }
+
